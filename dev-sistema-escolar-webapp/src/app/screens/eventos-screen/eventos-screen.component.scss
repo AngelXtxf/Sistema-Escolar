@@ -1,0 +1,323 @@
+/* =========================
+   eventos-screen.component.scss
+   ========================= */
+
+/* Ajuste del margen para el sidebar */
+.main-content-maestros {
+  margin-left: 220px;
+  transition: margin-left 0.3s;
+}
+
+@media (max-width: 991px) {
+  .main-content-maestros {
+    margin-left: 0;
+  }
+}
+
+.wrapper {
+  height: auto;
+}
+
+/* Encabezados y Cuerpos */
+.header-home,
+.header-home-maestros {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.body-alumnos,
+.body-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* =========================
+   Contenedores
+   ========================= */
+.container {
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* =========================
+   Tabla y Contenedor con Scroll
+   ========================= */
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  min-height: 1px;
+  margin: 0 auto;
+  background: var(--table-bg); /* Fondo dinámico */
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+table {
+  min-width: 1200px;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  background: transparent;
+}
+
+::ng-deep .mat-mdc-table {
+  table-layout: fixed !important;
+  background: transparent !important;
+}
+
+/* Encabezados de Tabla */
+.mat-mdc-header-cell {
+  border-bottom-color: var(--table-header-border, #231f20);
+  font-family: Nexa-Bold !important;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+  color: var(--text-main) !important;
+  background: inherit;
+}
+
+/* Celdas de Tabla */
+.mat-mdc-cell {
+  text-align: left;
+  font-family: Nexa !important;
+  font-size: 15px !important;
+  letter-spacing: 0px !important;
+  color: var(--text-main) !important;
+  opacity: 1 !important;
+}
+
+/* =========================
+   Estilos del Buscador (Filter) - CORREGIDO
+   ========================= */
+::ng-deep .mat-mdc-form-field {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* 1. Fondo transparente (quita el cuadro blanco) */
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+}
+
+/* 2. Texto del Input (dinámico) */
+::ng-deep input.mat-mdc-input-element {
+  color: var(--text-main) !important;
+  caret-color: var(--primary);
+  padding-top: 5px; /* Evita superposición */
+}
+
+/* 3. Etiquetas (dinámicas y sin superposición) */
+::ng-deep .mat-mdc-form-field-label,
+::ng-deep .mat-mdc-floating-label {
+  color: var(--text-main) !important;
+  opacity: 0.8;
+}
+
+/* 4. Placeholder (dinámico) */
+::ng-deep .mat-mdc-input-element::placeholder {
+  color: var(--text-main) !important;
+}
+
+/* 5. Icono (Lupita) */
+::ng-deep .mat-mdc-form-field .mat-icon {
+  color: var(--text-main) !important;
+}
+
+/* 6. Línea inferior (subrayado) */
+::ng-deep .mdc-line-ripple::before,
+::ng-deep .mdc-line-ripple::after {
+  border-bottom-color: var(--text-main) !important;
+}
+
+/* 7. Ajuste vertical para el Label */
+::ng-deep .mat-mdc-form-field-infix {
+  padding-top: 16px !important;
+  min-height: 50px;
+}
+
+/* =========================
+   Estilos del Paginador (Paginator)
+   ========================= */
+::ng-deep .mat-mdc-paginator {
+  background: transparent !important;
+  color: var(--text-main) !important;
+}
+
+::ng-deep .mat-mdc-paginator-container,
+::ng-deep .mat-mdc-paginator-page-size-label,
+::ng-deep .mat-mdc-paginator-range-label,
+::ng-deep .mat-mdc-select-value-text {
+  color: var(--text-main) !important;
+  font-family: Nexa !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-icon-button {
+  color: var(--text-main) !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-icon-button svg {
+  fill: var(--text-main) !important;
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  color: var(--text-main) !important;
+}
+
+/* =========================
+   Alerta / Card (Colores FIJOS para contraste)
+   ========================= */
+.alert-warning {
+  font-family: Nexa;
+  font-size: 16px;
+  color: #231f20; /* Fijo oscuro */
+  text-align: center;
+  background: #fff3cd; /* Fijo claro (amarillo) */
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.alert .title-table {
+  text-align: center;
+  margin: 0 auto;
+  color: #231f20 !important;
+}
+
+/* =========================
+   Acciones (Colores FIJOS vibrantes)
+   ========================= */
+.td-editar {
+  color: #0092b8 !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
+  text-align: center;
+}
+.td-editar:hover {
+  color: #006179 !important;
+  font-size: 25px !important;
+  text-align: center;
+}
+
+.td-eliminar {
+  color: #e84150 !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
+  text-align: center;
+}
+.td-eliminar:hover {
+  color: #ce1626 !important;
+  font-size: 25px !important;
+  text-align: center;
+}
+
+/* =========================
+   Títulos y Tipografía
+   ========================= */
+.title-perfil,
+.title-table {
+  display: block;
+  line-height: 1.1;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  opacity: 1;
+  font-family: Nexa-Bold;
+  color: var(--text-main); /* Dinámico */
+}
+
+.title-perfil {
+  margin-left: 3rem;
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2.25rem);
+  text-align: left;
+}
+
+.title-table {
+  margin-left: 3rem;
+  font-size: clamp(1.125rem, 0.95rem + 0.9vw, 1.875rem);
+  text-align: center;
+}
+
+/* =========================
+   Responsive Media Queries
+   ========================= */
+
+/* 635px - 660px */
+@media (min-width: 635px) and (max-width: 660px) {
+  .title-perfil {
+    font-size: clamp(1.25rem, 0.9rem + 1vw, 1.9rem);
+    letter-spacing: -0.01em;
+  }
+  .title-table {
+    font-size: clamp(1.05rem, 0.85rem + 0.7vw, 1.6rem);
+  }
+}
+
+/* 576px - 699px */
+@media (min-width: 576px) and (max-width: 699px) {
+  .row.mt-5.mb-5 > .col-12 br { display: none; }
+  .title-perfil, .title-table { text-align: left; margin-left: 1.5rem; }
+  .row .col-12 .title-perfil:first-of-type { font-size: clamp(1.25rem, 1rem + 1.1vw, 1.9rem); line-height: 1.15; margin-bottom: 0.4rem; }
+  .row .col-12 .title-perfil:last-of-type { text-align: left; font-size: clamp(1.2rem, 0.95rem + 1vw, 1.7rem); line-height: 1.15; margin-top: 0.25rem; }
+  .row.mt-5.mb-5 > .col-12 { margin-top: 1rem !important; margin-bottom: 0.7rem !important; }
+  .alert .title-table { margin-left: 0; }
+}
+
+/* 700px - 740px */
+@media (min-width: 700px) and (max-width: 740px) {
+  .row.mt-5.mb-5 > .col-12 br { display: none; }
+  .title-perfil, .title-table { text-align: left; margin-left: 3rem; }
+  .row .col-12 .title-perfil:first-of-type { margin-bottom: 0.4rem; }
+  .row .col-12 .title-perfil:last-of-type { margin-top: 0.25rem; }
+}
+
+/* >= 741px */
+@media (min-width: 741px) {
+  .title-perfil, .title-table { text-align: left; margin-left: 3rem; }
+  .row .col-12 .title-perfil:last-of-type { font-size: clamp(1.25rem, 1rem + 1.1vw, 1.875rem); line-height: 1.15; }
+}
+
+/* <= 575px (Móvil) */
+@media (max-width: 575px) {
+  .row.mt-5.mb-5 > .col-12 br { display: none; }
+  .title-perfil, .title-table { margin-left: 0; text-align: center; }
+  .row .col-12 .title-perfil:first-of-type { font-size: clamp(1.35rem, 1.1rem + 1.6vw, 2rem); line-height: 1.15; margin-bottom: 0.35rem; }
+  .row .col-12 .title-perfil:last-of-type { font-size: clamp(1.4rem, 1.15rem + 1.7vw, 2.1rem); line-height: 1.15; margin-top: 0.25rem; }
+  .row.mt-5.mb-5 > .col-12 { margin-top: 0.9rem !important; margin-bottom: 0.7rem !important; }
+  .alert .title-table { margin: 0; line-height: 1.2; padding: 0 8px; }
+  .mat-mdc-header-cell { font-size: 16px; }
+  .mat-mdc-cell { font-size: 14px !important; line-height: 1.25; }
+  .table-responsive { -webkit-overflow-scrolling: touch; }
+
+  .user-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: min(92vw, 540px);
+    display: inline-block;
+    vertical-align: bottom;
+    color: inherit;
+  }
+}
+
+/* 805px - 992px */
+@media (max-width: 992px) and (min-width: 805px) {
+  .container { max-width: 95vw; width: 130%; margin: 0 auto; }
+  .table-responsive { max-width: 95vw; margin: 0 auto; width: 100%; }
+  .table { min-width: 700px; width: 100%; }
+}

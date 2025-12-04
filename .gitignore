@@ -1,0 +1,16 @@
+# Angular y Node
+node_modules/
+.angular/
+dist/
+.vscode/
+
+# Python / Django
+__pycache__/
+*.pyc
+env/
+venv/
+.env
+
+# Sistema
+Thumbs.db
+.DS_Store

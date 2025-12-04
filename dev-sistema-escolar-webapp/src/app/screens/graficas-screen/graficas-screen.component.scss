@@ -1,0 +1,174 @@
+/* =========================
+   graficas-screen.component.scss
+   ========================= */
+
+/* Ajuste del margen para el sidebar */
+$sidebar-width: 220px;
+
+.main-content-graficas {
+  margin-left: $sidebar-width;
+  transition: margin-left 0.3s ease;
+
+  @media (max-width: 991px) {
+    margin-left: 0;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+
+  @media (max-width: 991px) {
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   Estructura Base
+   ========================= */
+.section-home,
+.body-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1.5rem;
+
+  @media (max-width: 576px) {
+    padding: 0 0.8rem;
+  }
+}
+
+/* =========================
+   Tipografía y Títulos
+   ========================= */
+.title-perfil,
+.title-table {
+  font-family: Nexa-Bold;
+  text-transform: capitalize;
+  display: block;
+  color: var(--text-main); /* Adaptable al tema */
+}
+
+.title-perfil {
+  font-size: clamp(1.6rem, 2.3vw, 2.4rem);
+}
+
+.title-table {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+/* =========================
+   Alerta / Banner Decorativo
+   ========================= */
+.alert-primary {
+  border-radius: 12px;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Usamos variable de header para que se vea integrado */
+  background: var(--table-header-bg);
+  color: var(--text-main);
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* =========================
+   Grid para Gráficas
+   ========================= */
+.graph-section,
+.user-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+
+  /* Mobile */
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Tablet */
+  @media (min-width: 577px) and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Desktop grande */
+  @media (min-width: 1440px) {
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   Contenedor de Gráfica (Tarjeta)
+   ========================= */
+.graph {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 1.5rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Estilos de tarjeta dinámicos */
+  background: var(--table-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+
+  /* Tablet */
+  @media (min-width: 577px) and (max-width: 1024px) {
+    max-width: 90vw;
+    padding: 2rem 0.8rem;
+  }
+
+  /* Desktop grande */
+  @media (min-width: 1440px) {
+    max-width: 750px;
+    padding: 2rem 1rem;
+  }
+}
+
+/* =========================
+   Canvas (Chart.js)
+   ========================= */
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  min-height: 260px;
+  display: block;
+
+  @media (min-width: 577px) and (max-width: 1024px) {
+    min-height: 360px;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 420px;
+  }
+}
+
+/* =========================
+   Ajustes Varios
+   ========================= */
+body,
+html {
+  overflow-x: hidden;
+}
+
+@media (max-width: 350px) {
+  .graph {
+    max-width: 96vw;
+    padding: 0.5rem 0;
+  }
+}
