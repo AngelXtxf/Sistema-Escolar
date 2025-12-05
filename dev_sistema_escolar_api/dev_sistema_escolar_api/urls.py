@@ -11,8 +11,10 @@ from dev_sistema_escolar_api.views import auth
 from dev_sistema_escolar_api.views import eventos
 
 urlpatterns = [
-   #Create Admin
-        path('admin/', users.AdminView.as_view()),
+   #Create Admina
+        path('admins/', users.AdminView.as_view()),
+    #Render
+        path('admin/', admin.site.urls),
     #Admin Data
         path('lista-admins/', users.AdminAll.as_view()),
     #Edit Admin
@@ -38,7 +40,7 @@ urlpatterns = [
     #Editar
         path('eventos-academicos', eventos.EventosView.as_view()),
     #Total de Eventos
-        path('eventos-totales/', eventos.TotalEventos.as_view())
+        path('eventos-totales/', eventos.TotalEventos.as_view()),
 ]
 
 if settings.DEBUG:
