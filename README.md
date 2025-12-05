@@ -13,7 +13,7 @@ El objetivo principal es permitir la gestión completa (CRUD) de conferencias, t
 
 * **Frontend:** Angular (Componentes, Servicios HTTP, Angular Material, Gráficas).
 * **Backend:** Django (API REST, Autenticación, ORM).
-* **Despliegue:** Vercel (Frontend) y pyAnywhere (Backend).
+* **Despliegue:** Vercel (Frontend) y Render (Backend).
 
 ---
 
